@@ -1,0 +1,33 @@
+
+MaterialDef Grass2 {
+ 
+MaterialParameters {
+Texture2D Texture
+Texture2D Noise
+Vector4 Color
+Float Time
+Float WindStrength
+Vector2 WindDirection
+Boolean Use_VertexColor
+Vector3 CamPos
+}
+ 
+Technique {
+LightMode SinglePass
+VertexShader GLSL100:   MatDefs/Grass/MovingGrass.vert
+FragmentShader GLSL100: MatDefs/Grass/MovingGrass.frag
+ 
+WorldParameters {
+WorldViewProjectionMatrix
+WorldViewMatrix
+}
+ 
+Defines {
+TEXTURE : Texture
+VERTEX_COLOR : Use_VertexColor
+}
+ 
+}
+ 
+ 
+}
